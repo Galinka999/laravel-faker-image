@@ -1,5 +1,6 @@
 ## The package for Laravel complements the fake image generation methods.
 ### To generate images, you can use the LoremFlickr service.
+### You can also generate an image randomly from the Fixtures folder
 
 #### Installation
 - composer require galka/laravel-faker-image
