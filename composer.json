@@ -1,14 +1,27 @@
 {
-    "name": "vendor_name/laravel-custom-faker-image",
-    "description": "description",
+    "name": "galka/laravel-faker-image",
+    "description": "The package for Laravel complements the fake image generation methods.",
     "minimum-stability": "stable",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
-            "name": "galina",
-            "email": "email@example.com"
+            "name": "Galina Mikhailova",
+            "email": "galina89ruzhyk@mail.ru"
         }
     ],
     "require": {
+        "php": "^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Galka\\FakerImageGenerator\\Providers\\FakerImageProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Galka\\FakerImageGenerator\\": "src"
+        }
     }
 }

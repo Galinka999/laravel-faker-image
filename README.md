@@ -1,23 +1,20 @@
-## Telegram-logger for Laravel
+## The package for Laravel complements the fake image generation methods.
+### To generate images, you can use the LoremFlickr service.
 
 #### Installation
-- composer require galka/laravel-telegram-logger
+- composer require galka/laravel-faker-image
 
 
 ### Publish
-- php artisan vendor:publish --provider='Galka\TelegramBotLogger\Providers\TelegramBotLoggerProvider'
-- add channel to config/logging.php :
+- php artisan vendor:publish --provider='Galka\FakerImageGenerator\Providers\FakerImageProvider'
 
-'telegram_log' => [
-    'driver' => 'custom',
-    'via' => TelegramLoggerFactory::class,
-    'level' => env('LOG_LEVEL', 'debug'),
-    'chat_id' => env('TELEGRAM_LOGGER_CHAT_ID'),
-    'token' => env('TELEGRAM_LOGGER_TOKEN'),
-]
 
-- add token and chat_id to .env
+### Factory usage
 
-### Usage
+- will generate a 600 * 600 image in the storage/images directory with an image of a dog: <br>
 
-logger()->channel('telegram_log)->debug('test);
+$this->faker->imageLoremFlickr('images', 600, 600, 'dog')
+
+- generate a random image from the test/Fixtures folder
+
+$this->faker->imageRandomFromFixtures('images/products', false),
